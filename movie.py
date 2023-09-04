@@ -36,6 +36,9 @@ def search_movie():
             popularity_text.set(f'Popularity: {first_movie["popularity"]}')
             vote_count_text.set(f'Vote Count: {first_movie["vote_count"]}')
             vote_average_text.set(f'Vote Average: {first_movie["vote_average"]}')
+            
+            # Display the movie ID
+            movie_id_text.set(f'Movie ID: {first_movie["id"]}')
         else:
             messagebox.showinfo("No Results", "No movie found with that title.")
 
@@ -63,6 +66,8 @@ vote_count_text = tk.StringVar()
 vote_count_label = tk.Label(root, textvariable=vote_count_text)
 vote_average_text = tk.StringVar()
 vote_average_label = tk.Label(root, textvariable=vote_average_text)
+movie_id_text = tk.StringVar()
+movie_id_label = tk.Label(root, textvariable=movie_id_text)
 
 # Place GUI elements on the window
 entry_label.pack()
@@ -75,6 +80,7 @@ genres_label.pack()
 popularity_label.pack()
 vote_count_label.pack()
 vote_average_label.pack()
+movie_id_label.pack()
 
 # Limit the maximum height of the window
 root.maxsize(500, 600)
